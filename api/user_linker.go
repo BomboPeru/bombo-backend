@@ -45,6 +45,25 @@ func LinkWithUserType(api iris.Party) {
 
 	})
 
+	api.Get("/user/all", func(c iris.Context) {
+		users, err := helpers.GetAllUsers()
+		if err != nil {
+			log.Println("GetAllUsers(), ", err)
+			c.StatusCode(iris.StatusInternalServerError)
+			c.JSON(Response{
+				Data:  nil,
+				Error: err.Error(),
+			})
+		} else {
+			c.StatusCode(iris.StatusOK)
+			c.JSON(Response{
+				Data:  users,
+				Error: nil,
+			})
+		}
+
+	})
+
 	api.Post("/user/create", func(c iris.Context) {
 		user := new(helpers.User)
 		err := c.ReadForm(user)
