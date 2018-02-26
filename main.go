@@ -19,7 +19,8 @@ func main() {
 	api.LinkWithPlayerType(apiParty)
 	
 	api.LinkWithVirtualTeamType(apiParty)
-	
+
+	app.Logger().SetLevel("debug")
 
 	app.Run(iris.Addr(":8080"))
 
