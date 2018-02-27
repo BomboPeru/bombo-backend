@@ -178,4 +178,6 @@ func LinkWithPlayerType(api iris.Party) {
 		})
 
 	})
+
+	ExtraPlayerEndpoints(api)
 }

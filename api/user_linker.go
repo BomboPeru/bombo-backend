@@ -187,4 +187,6 @@ func LinkWithUserType(api iris.Party) {
 			})
 		}
 	})
+
+	ExtraUserEndpoints(api)
 }

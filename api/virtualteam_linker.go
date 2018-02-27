@@ -178,4 +178,6 @@ func LinkWithVirtualTeamType(api iris.Party) {
 		})
 
 	})
+
+	ExtraVirtualteamEndpoints(api)
 }
