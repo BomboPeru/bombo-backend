@@ -39,6 +39,25 @@ func LinkWithVirtualTeamType(api iris.Party) {
 
 	})
 
+	api.Get("/virtual_team/all", func(c iris.Context) {
+		virtualteams, err := helpers.GetAllVirtualTeams()
+		if err != nil {
+			log.Println("GetAllVirtualTeams(), ", err)
+			c.StatusCode(iris.StatusInternalServerError)
+			c.JSON(Response{
+				Data:  nil,
+				Error: err.Error(),
+			})
+		} else {
+			c.StatusCode(iris.StatusOK)
+			c.JSON(Response{
+				Data:  virtualteams,
+				Error: nil,
+			})
+		}
+
+	})
+
 	api.Post("/virtual_team/create", func(c iris.Context) {
 		virtualteam := new(helpers.VirtualTeam)
 		err := c.ReadJSON(virtualteam)
@@ -53,7 +72,7 @@ func LinkWithVirtualTeamType(api iris.Party) {
 		}
 
 		// If not have Id
-		if virtualteam.ID.String() == "" {
+		if uuid.Equal(virtualteam.ID, uuid.Nil){
 			newID, err := uuid.NewV4()
 			if err != nil {
 				log.Println("uuid.NewV4(), ", err)
@@ -99,7 +118,7 @@ func LinkWithVirtualTeamType(api iris.Party) {
 		}
 
 		// If not have Id
-		if virtualteam.ID.String() == "" {
+		if uuid.Equal(virtualteam.ID, uuid.Nil){
 			log.Println("Update method needs Id")
 			c.StatusCode(iris.StatusInternalServerError)
 			c.JSON(Response{

@@ -39,6 +39,25 @@ func LinkWithPlayerType(api iris.Party) {
 
 	})
 
+	api.Get("/player/all", func(c iris.Context) {
+		players, err := helpers.GetAllPlayers()
+		if err != nil {
+			log.Println("GetAllPlayers(), ", err)
+			c.StatusCode(iris.StatusInternalServerError)
+			c.JSON(Response{
+				Data:  nil,
+				Error: err.Error(),
+			})
+		} else {
+			c.StatusCode(iris.StatusOK)
+			c.JSON(Response{
+				Data:  players,
+				Error: nil,
+			})
+		}
+
+	})
+
 	api.Post("/player/create", func(c iris.Context) {
 		player := new(helpers.Player)
 		err := c.ReadJSON(player)
@@ -53,7 +72,7 @@ func LinkWithPlayerType(api iris.Party) {
 		}
 
 		// If not have Id
-		if player.ID.String() == "" {
+		if uuid.Equal(player.ID, uuid.Nil){
 			newID, err := uuid.NewV4()
 			if err != nil {
 				log.Println("uuid.NewV4(), ", err)
@@ -99,7 +118,7 @@ func LinkWithPlayerType(api iris.Party) {
 		}
 
 		// If not have Id
-		if player.ID.String() == "" {
+		if uuid.Equal(player.ID, uuid.Nil){
 			log.Println("Update method needs Id")
 			c.StatusCode(iris.StatusInternalServerError)
 			c.JSON(Response{
