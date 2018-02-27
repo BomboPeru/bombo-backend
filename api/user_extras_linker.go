@@ -90,5 +90,22 @@ func ExtraUserEndpoints(api iris.Party) {
 		}
 
 
+		finalUser, err := helpers.UpdateUser(user)
+		if err !=nil {
+			log.Println("helpers.UpdateUser(), ", err)
+			c.StatusCode(iris.StatusInternalServerError)
+			c.JSON(Response{
+				Data:  nil,
+				Error: err.Error(),
+			})
+			return
+		}
+
+		c.StatusCode(iris.StatusOK)
+		c.JSON(Response{
+			Data: finalUser,
+			Error: nil,
+		})
+
 	})
 }
