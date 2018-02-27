@@ -9,7 +9,7 @@ import (
 )
 
 func ExtraUserEndpoints(api iris.Party) {
-	api.Post("/add-team/{type:string}", func(c iris.Context) {
+	api.Post("/user/add-team/{type:string}", func(c iris.Context) {
 		virtualTeamType := c.Params().Get("type")
 
 		type AddedTeam struct {
