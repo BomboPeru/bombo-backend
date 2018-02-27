@@ -41,9 +41,9 @@ func LinkWithPlayerType(api iris.Party) {
 
 	api.Post("/player/create", func(c iris.Context) {
 		player := new(helpers.Player)
-		err := c.ReadForm(player)
+		err := c.ReadJSON(player)
 		if err != nil {
-			log.Println("c.ReadForm(), ", err)
+			log.Println("c.ReadJSON(), ", err)
 			c.StatusCode(iris.StatusInternalServerError)
 			c.JSON(Response{
 				Data:  nil,
@@ -87,9 +87,9 @@ func LinkWithPlayerType(api iris.Party) {
 
 	api.Post("/player/update", func(c iris.Context) {
 		player := new(helpers.Player)
-		err := c.ReadForm(player)
+		err := c.ReadJSON(player)
 		if err != nil {
-			log.Println("c.ReadForm(), ", err)
+			log.Println("c.ReadJSON(), ", err)
 			c.StatusCode(iris.StatusInternalServerError)
 			c.JSON(Response{
 				Data:  nil,
@@ -134,9 +134,9 @@ func LinkWithPlayerType(api iris.Party) {
 		}
 
 		idForm := new(IDForm)
-		err := c.ReadForm(idForm)
+		err := c.ReadJSON(idForm)
 		if err != nil {
-			log.Println("c.ReadForm(), ", err)
+			log.Println("c.ReadJSON(), ", err)
 			c.StatusCode(iris.StatusInternalServerError)
 			c.JSON(Response{
 				Data:  nil,

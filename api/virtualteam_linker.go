@@ -41,9 +41,9 @@ func LinkWithVirtualTeamType(api iris.Party) {
 
 	api.Post("/virtual_team/create", func(c iris.Context) {
 		virtualteam := new(helpers.VirtualTeam)
-		err := c.ReadForm(virtualteam)
+		err := c.ReadJSON(virtualteam)
 		if err != nil {
-			log.Println("c.ReadForm(), ", err)
+			log.Println("c.ReadJSON(), ", err)
 			c.StatusCode(iris.StatusInternalServerError)
 			c.JSON(Response{
 				Data:  nil,
@@ -87,9 +87,9 @@ func LinkWithVirtualTeamType(api iris.Party) {
 
 	api.Post("/virtual_team/update", func(c iris.Context) {
 		virtualteam := new(helpers.VirtualTeam)
-		err := c.ReadForm(virtualteam)
+		err := c.ReadJSON(virtualteam)
 		if err != nil {
-			log.Println("c.ReadForm(), ", err)
+			log.Println("c.ReadJSON(), ", err)
 			c.StatusCode(iris.StatusInternalServerError)
 			c.JSON(Response{
 				Data:  nil,
@@ -134,9 +134,9 @@ func LinkWithVirtualTeamType(api iris.Party) {
 		}
 
 		idForm := new(IDForm)
-		err := c.ReadForm(idForm)
+		err := c.ReadJSON(idForm)
 		if err != nil {
-			log.Println("c.ReadForm(), ", err)
+			log.Println("c.ReadJSON(), ", err)
 			c.StatusCode(iris.StatusInternalServerError)
 			c.JSON(Response{
 				Data:  nil,

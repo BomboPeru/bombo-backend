@@ -66,9 +66,10 @@ func LinkWithUserType(api iris.Party) {
 
 	api.Post("/user/create", func(c iris.Context) {
 		user := new(helpers.User)
-		err := c.ReadForm(user)
+		err := c.ReadJSON(user)
+		c.ReadJSON(user)
 		if err != nil {
-			log.Println("c.ReadForm(), ", err)
+			log.Println("c.ReadJSON(), ", err)
 			c.StatusCode(iris.StatusInternalServerError)
 			c.JSON(Response{
 				Data:  nil,
@@ -112,9 +113,9 @@ func LinkWithUserType(api iris.Party) {
 
 	api.Post("/user/update", func(c iris.Context) {
 		user := new(helpers.User)
-		err := c.ReadForm(user)
+		err := c.ReadJSON(user)
 		if err != nil {
-			log.Println("c.ReadForm(), ", err)
+			log.Println("c.ReadJSON(), ", err)
 			c.StatusCode(iris.StatusInternalServerError)
 			c.JSON(Response{
 				Data:  nil,
@@ -159,9 +160,9 @@ func LinkWithUserType(api iris.Party) {
 		}
 
 		idForm := new(IDForm)
-		err := c.ReadForm(idForm)
+		err := c.ReadJSON(idForm)
 		if err != nil {
-			log.Println("c.ReadForm(), ", err)
+			log.Println("c.ReadJSON(), ", err)
 			c.StatusCode(iris.StatusInternalServerError)
 			c.JSON(Response{
 				Data:  nil,
