@@ -20,6 +20,8 @@ func ExtraUserEndpoints(api iris.Party) {
 		payload := new(AddedTeam)
 
 		err := c.ReadJSON(payload)
+
+
 		if err != nil {
 			log.Println("c.ReadJSON(), ", err)
 			c.StatusCode(iris.StatusInternalServerError)
@@ -28,6 +30,21 @@ func ExtraUserEndpoints(api iris.Party) {
 				Error: err.Error(),
 			})
 			return
+		}
+
+		// If virtualTeam not have Id
+		if uuid.Equal(payload.Team.ID, uuid.Nil){
+			newID, err := uuid.NewV4()
+			if err != nil {
+				log.Println("uuid.NewV4(), ", err)
+				c.StatusCode(iris.StatusInternalServerError)
+				c.JSON(Response{
+					Data:  nil,
+					Error: err.Error(),
+				})
+				return
+			}
+			payload.Team.ID = newID
 		}
 
 		teamResponse, err := helpers.CreateNewVirtualTeam(payload.Team)
