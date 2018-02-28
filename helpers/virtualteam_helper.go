@@ -13,7 +13,7 @@ import (
 type VirtualTeam struct {
 	ID        uuid.UUID `json:"id" form:"id"`
 	Name      string    `json:"name" form:"name"`
-	Players   []*Player `json:"players" form:"players"`
+	Players   map[string]*Player `json:"players" form:"players"`
 	Balance   int       `json:"balance" form:"balance"`
 	LeagueImg string    `json:"league_img" form:"league_img"`
 	CreatedAt time.Time `json:"created_at" form:"created_at"`
