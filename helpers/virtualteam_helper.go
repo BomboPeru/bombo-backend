@@ -11,10 +11,10 @@ import (
 
 type Players struct {
 	Name       string    `json:"name"`
-	GoalKeeper []*Player `json:"gol_keeper"`
+	GoalKeeper []*Player `json:"goal_keeper"`
 	MidFielder []*Player `json:"mid_fielder"`
 	Defender   []*Player `json:"defender"`
-	Forward    []*Player `json:"forwarder"`
+	Forward    []*Player `json:"forward"`
 	Coach      *Player   `json:"coach"`
 }
 
