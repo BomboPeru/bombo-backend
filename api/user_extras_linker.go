@@ -110,13 +110,13 @@ func ExtraUserEndpoints(api iris.Party) {
 	})
 
 
-	api.Post("/user/remove-team/{type:string}", func(c iris.Context) {
-		virtualTeamType := c.Params().Get("type")
-
-		type AddedTeam struct {
-			UserId uuid.UUID `json:"user_id"`
-			TeamId uuid.UUID `json:"team_id"`
-		}
-
-	})
+	//api.Post("/user/remove-team/{type:string}", func(c iris.Context) {
+	//	virtualTeamType := c.Params().Get("type")
+	//
+	//	type AddedTeam struct {
+	//		UserId uuid.UUID `json:"user_id"`
+	//		TeamId uuid.UUID `json:"team_id"`
+	//	}
+	//
+	//})
 }
