@@ -9,11 +9,20 @@ import (
 	"github.com/satori/go.uuid"
 )
 
+type Players struct {
+	Name       string    `json:"name"`
+	GolKeeper  []*Player `json:"gol_keeper"`
+	MidFielder []*Player `json:"mid_fielder"`
+	Defender   []*Player `json:"defender"`
+	Forwarder  []*Player `json:"forwarder"`
+	Coach      *Player   `json:"coach"`
+}
+
 // VirtualTeam ...
 type VirtualTeam struct {
 	ID        uuid.UUID `json:"id" form:"id"`
 	Name      string    `json:"name" form:"name"`
-	Players   map[string]*Player `json:"players" form:"players"`
+	Players   Players   `json:"players" form:"players"`
 	Balance   int       `json:"balance" form:"balance"`
 	LeagueImg string    `json:"league_img" form:"league_img"`
 	CreatedAt time.Time `json:"created_at" form:"created_at"`

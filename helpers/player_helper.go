@@ -13,6 +13,9 @@ type Player struct {
     Name string `json:"name" form:"name"`
     JNumber string `json:"j_number" form:"j_number"`
     Points string `json:"points" form:"points"`
+    Team string `json:"team"`
+    Cost int `json:"cost"`
+	Nation     string `json:"nation"`
 }
 
 // GetPlayerByID ...
