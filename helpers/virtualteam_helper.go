@@ -34,7 +34,7 @@ type VirtualTeam struct {
 func GetVirtualTeamByID(id uuid.UUID) (*VirtualTeam, error) {
 	virtualteam := new(VirtualTeam)
 
-	if err := DbVirtualTeam.One("Id", id, virtualteam); err != nil {
+	if err := DbVirtualTeam.One("ID", id, virtualteam); err != nil {
 		if err == storm.ErrNotFound {
 			log.Println("VirtualTeam not found")
 			return virtualteam, err

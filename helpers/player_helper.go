@@ -22,7 +22,7 @@ type Player struct {
 func GetPlayerByID(id uuid.UUID) (*Player, error) {
 	player := new(Player)
 
-	if err := DbPlayer.One("Id", id, player); err != nil {
+	if err := DbPlayer.One("ID", id, player); err != nil {
 		if err == storm.ErrNotFound {
 			log.Println("Player not found")
 			return player, err
