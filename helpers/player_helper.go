@@ -134,5 +134,11 @@ func UpdatePlayer(player *Player) (*Player, error) {
 		log.Println("DbPlayer.Update(), ", err.Error())
 		return player, err
 	}
-	return player, nil
+
+	finalPlayer, err := GetPlayerByID(player.ID)
+	if err != nil {
+		log.Println("GetPlayerByID(), ", err.Error())
+		return finalPlayer, err
+	}
+	return finalPlayer, nil
 }

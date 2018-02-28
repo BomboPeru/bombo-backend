@@ -144,5 +144,12 @@ func UpdateVirtualTeam(virtualteam *VirtualTeam) (*VirtualTeam, error) {
 		log.Println("DbVirtualTeam.Update(), ", err.Error())
 		return virtualteam, err
 	}
-	return virtualteam, nil
+
+	finalTeam, err := GetVirtualTeamByID(virtualteam.ID)
+	if err != nil {
+		log.Println("GetVirtualTeamByID(), ", err.Error())
+		return finalTeam, err
+	}
+
+	return finalTeam, nil
 }
