@@ -137,5 +137,11 @@ func UpdateUser(user *User) (*User, error) {
 		log.Println("DbUser.Update(), ", err.Error())
 		return user, err
 	}
-	return user, nil
+
+	finalUser, err := GetUserByID(user.ID)
+	if err != nil {
+		log.Println("GetUserByID(), ", err.Error())
+		return finalUser, err
+	}
+	return finalUser, nil
 }
