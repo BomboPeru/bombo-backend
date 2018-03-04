@@ -9,6 +9,7 @@ import (
 	"github.com/satori/go.uuid"
 )
 
+// Players ...
 type Players struct {
 	Name       string    `json:"name"`
 	GoalKeeper []*Player `json:"goal_keeper"`

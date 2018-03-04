@@ -14,7 +14,7 @@ type Player struct {
     JNumber string `json:"j_number" form:"j_number"`
     Points string `json:"points" form:"points"`
     Team string `json:"team"`
-    Cost int `json:"cost"`
+    Cost float64 `json:"cost"`
 	Nation     string `json:"nation"`
 }
 
