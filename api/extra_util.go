@@ -49,9 +49,9 @@ func LinkExtrasUtil(api iris.Party) {
 		}
 
 		sort.Sort(byPoints(allPlayingPositions))
-
+		offset := len(allPlayingPositions)
 		for i, p := range allPlayingPositions {
-			p.Place = i
+			p.Place = offset-i
 		}
 
 		c.StatusCode(iris.StatusOK)
