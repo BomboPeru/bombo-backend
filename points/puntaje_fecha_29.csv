@@ -137,36 +137,36 @@ Scott Kyle,Chelsea,midfielder,5.8,0
 Willian,Chelsea,midfielder,9.2,0.9
 Giroud Olivier,Chelsea,forwarder,11.1,0.9
 Morata Álvaro,Chelsea,forwarder,14.1,0.9
-Hennessey Wayne,Crystal Palace,goal_keeper,5.8,0
+Hennessey Wayne,Crystal Palace,goal_keeper,5.8,1.8
 Henry Dion,Crystal Palace,goal_keeper,5.4,0
 Speroni Julian,Crystal Palace,goal_keeper,5.5,0
 Dann Scott,Crystal Palace,defender,6.2,0
 Delaney Damien,Crystal Palace,defender,5.7,0
 Fosu-Mensah Timothy,Crystal Palace,defender,6,0
 Jach Jaroslaw,Crystal Palace,defender,6,0
-Kelly Martin,Crystal Palace,defender,5.7,0
-Riedewald Jairo,Crystal Palace,defender,6.2,0
+Kelly Martin,Crystal Palace,defender,5.7,1.8
+Riedewald Jairo,Crystal Palace,defender,6.2,0.9
 Sakho Mamadou,Crystal Palace,defender,6.4,0
 Souare Pape,Crystal Palace,defender,6.1,0
-Tomkins James,Crystal Palace,defender,6,0
+Tomkins James,Crystal Palace,defender,6,1.8
 Ward Joel,Crystal Palace,defender,6.4,0
-van Aanholt Patrick,Crystal Palace,defender,6.9,0
+van Aanholt Patrick,Crystal Palace,defender,6.9,9
 Cabaye Yohan,Crystal Palace,midfielder,7.2,0
 Kirby Nya,Crystal Palace,midfielder,6.1,0
 Loftus-Cheek Ruben,Crystal Palace,midfielder,6,0
-McArthur James,Crystal Palace,midfielder,5.8,0
-Milivojevic Luka,Crystal Palace,midfielder,6.6,0
+McArthur James,Crystal Palace,midfielder,5.8,1.8
+Milivojevic Luka,Crystal Palace,midfielder,6.6,1.8
 Mutch Jordon,Crystal Palace,midfielder,6.1,0
 Phillips Michael,Crystal Palace,midfielder,4.5,0
 Puncheon Jason,Crystal Palace,midfielder,6,0
 Sako Bakary,Crystal Palace,midfielder,6.6,0
-Townsend Andros,Crystal Palace,midfielder,7.6,0
-Benteke Christian,Crystal Palace,forwarder,10.3,0
+Townsend Andros,Crystal Palace,midfielder,7.6,7.2
+Benteke Christian,Crystal Palace,forwarder,10.3,5.4
 Eyenga-Lokilo Jason,Crystal Palace,forwarder,4.5,0
 Lee Chung-Yong,Crystal Palace,forwarder,5.7,0
 Rakip Erdal,Crystal Palace,forwarder,6.8,0
-Schlupp Jeffery,Crystal Palace,forwarder,6.4,0
-Sorloth Alexander,Crystal Palace,forwarder,4.5,0
+Schlupp Jeffery,Crystal Palace,forwarder,6.4,4.5
+Sorloth Alexander,Crystal Palace,forwarder,4.5,1.8
 Zaha Wilfried,Crystal Palace,forwarder,9.2,0
 Hewelt Mateusz,Everton,goal_keeper,4.5,0
 Pickford Jordan,Everton,goal_keeper,6.6,1.8
@@ -304,32 +304,32 @@ Gabriel Jesus,Manchester City,forwarder,13.5,1.1
 Nmecha Lukas,Manchester City,forwarder,6.1,0
 Pereira Joel,Manchester Utd,goal_keeper,5.4,0
 Romero Sergio,Manchester Utd,goal_keeper,6.4,0
-de Gea David,Manchester Utd,goal_keeper,8,0
+de Gea David,Manchester Utd,goal_keeper,8,2.2
 Bailly Eric Bertrand,Manchester Utd,defender,8.1,0
 Darmian Matteo,Manchester Utd,defender,6.6,0
 Jones Phil,Manchester Utd,defender,7.6,0
-Lindelof Victor,Manchester Utd,defender,6.6,0
+Lindelof Victor,Manchester Utd,defender,6.6,2.2
 Rojo Marcos,Manchester Utd,defender,7.3,0
-Shaw Luke,Manchester Utd,defender,6.6,0
-Smalling Chris,Manchester Utd,defender,7.3,0
-Valencia Antonio,Manchester Utd,defender,9.4,0
+Shaw Luke,Manchester Utd,defender,6.6,1.1
+Smalling Chris,Manchester Utd,defender,7.3,11
+Valencia Antonio,Manchester Utd,defender,9.4,5.5
 Blind Daley,Manchester Utd,midfielder,6.9,0
 Carrick Michael,Manchester Utd,midfielder,5.7,0
 Fellaini Marouane,Manchester Utd,midfielder,6.4,0
 Gomes Angel,Manchester Utd,midfielder,6.1,0
 Hamilton Ethan,Manchester Utd,midfielder,4.5,0
 Herrera Ander,Manchester Utd,midfielder,6.8,0
-Lingard Jesse,Manchester Utd,midfielder,8.3,0
-Mata Juan Manuel,Manchester Utd,midfielder,9.2,0
-Matic Nemanja,Manchester Utd,midfielder,6.4,0
+Lingard Jesse,Manchester Utd,midfielder,8.3,2.2
+Mata Juan Manuel,Manchester Utd,midfielder,9.2,1.1
+Matic Nemanja,Manchester Utd,midfielder,6.4,8.8
 McTominay Scott,Manchester Utd,midfielder,5.7,0
-Pogba Paul,Manchester Utd,midfielder,10.7,0
+Pogba Paul,Manchester Utd,midfielder,10.7,2.2
 Young Ashley,Manchester Utd,midfielder,6.6,0
 Ibrahimovic Zlatan,Manchester Utd,forwarder,12.9,0
-Lukaku Romelu,Manchester Utd,forwarder,15.2,0
+Lukaku Romelu,Manchester Utd,forwarder,15.2,8.8
 Martial Anthony,Manchester Utd,forwarder,10.9,0
-Rashford Marcus,Manchester Utd,forwarder,10,0
-Sánchez Alexis,Manchester Utd,forwarder,15.9,0
+Rashford Marcus,Manchester Utd,forwarder,10,1.1
+Sánchez Alexis,Manchester Utd,forwarder,15.9,2.2
 Darlow Karl,Newcastle,goal_keeper,6,0
 Dubravka Martin,Newcastle,goal_keeper,6.1,1.8
 Elliot Rob,Newcastle,goal_keeper,5.5,0

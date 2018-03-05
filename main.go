@@ -37,7 +37,45 @@ func main() {
 	api.LinkExtrasUtil(apiParty)
 
 	app.Logger().SetLevel("debug")
-
+	//
 	app.Run(iris.Addr(":8080"))
 
+	////jaimePoints, err := external.GetPlayersPointsFromCSV("./points/puntaje_fecha_29.csv")
+	////if err != nil {
+	////	panic(err)
+	////}
+	////id, _ := uuid.FromString("08e4b723-8e19-4828-8604-0df593dcad62")
+	////user, err := helpers.GetUserByID(id)
+	//
+	//
+	//
+	//resp, err := http.Get("http://open.bombo.pe/api/v1.0/premier_league")
+	//if err != nil {
+	//	panic(err)
+	//}
+	//
+	//data, err := ioutil.ReadAll(resp.Body)
+	//if err != nil {
+	//	panic(err)
+	//}
+	//
+	//type Response struct {
+	//	Data external.League `json:"data"`
+	//	Error error `json:"error"`
+	//}
+	//pLeague := new(Response)
+	//
+	//err = json.Unmarshal(data, pLeague)
+	//if err != nil {
+	//	panic(err)
+	//}
+	//
+	//events, err := external.GetAllActiveEvents()
+	//if err != nil {
+	//	panic(err)
+	//}
+	//
+	//bregyPoints := external.GetPlayersPointsFromPlayersList(pLeague.Data, events)
+	//
+	//pp.Println(bregyPoints[0:10])
 }

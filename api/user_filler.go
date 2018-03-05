@@ -22,7 +22,7 @@ func FillUsers() {
 	}
 
 	for _, user := range users {
-		external.FillUserTeamWithPlayerPoints(user, points)
+		external.FillUserTeamsWithPlayerPoints(user, points)
 		if err != nil {
 			panic(err)
 		}

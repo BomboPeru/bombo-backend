@@ -56,8 +56,198 @@ func GetPlayersPointsFromCSV(filePath string) ([]*PlayerPoints, error) {
 	return playersPoints, nil
 }
 
+func GetPlayersPointsFromPlayersList(league League, matchs []*MatchEvents) []*PlayerPoints {
+	//players := make([]*helpers.Player, 0)
 
-func FillUserTeamWithPlayerPoints(user *helpers.User, pPoints []*PlayerPoints) {
+	type PlayerWithPosition struct {
+		Player *Player `json:"player"`
+		Position string `json:"position"`
+	}
+
+	allLeaguePlayers := make([]*PlayerWithPosition, 0)
+	for _, team := range league {
+		for _, p := range team.GoalKeeper {
+			allLeaguePlayers = append(allLeaguePlayers, &PlayerWithPosition{
+				Player: p,
+				Position: goalKeeper,
+			})
+		}
+		for _, p := range team.MidFielder {
+			allLeaguePlayers = append(allLeaguePlayers, &PlayerWithPosition{
+				Player: p,
+				Position: midFielder,
+			})
+		}
+		for _, p := range team.Defender {
+			allLeaguePlayers = append(allLeaguePlayers, &PlayerWithPosition{
+				Player: p,
+				Position: defender,
+			})
+		}
+		for _, p := range team.Forward {
+			allLeaguePlayers = append(allLeaguePlayers, &PlayerWithPosition{
+				Player: p,
+				Position: forward,
+			})
+		}
+	}
+
+
+	playersWithPoints := make([]*PlayerPoints, len(allLeaguePlayers))
+
+	for i, pl := range allLeaguePlayers {
+		playersWithPoints[i] = &PlayerPoints{
+			Name: pl.Player.Name,
+			Position: pl.Position,
+			Points: 0.0,
+			Cost: pl.Player.Cost,
+			Team: pl.Player.Team,
+		}
+	}
+
+	for _, match := range matchs {
+		for typeAlign, eventPlayer := range match.Home.Events {
+			if typeAlign == principal {
+
+				for _, player := range eventPlayer {
+					if len(player.Events) > 0 {
+						for indexPlayer, leaguePlayer := range allLeaguePlayers {
+							if util.MatchNames(leaguePlayer.Player.Name, player.Name) {
+								accumPoints := 0.0
+								for _, event := range player.Events {
+									score, _ := strconv.Atoi(match.Home.Score)
+									accumPoints += float64(GetPlayerPointsByEvent(
+										score,
+										principal,
+										leaguePlayer.Position,
+										event,
+									))
+								}
+								if match.Home.Score > match.Away.Score {
+									accumPoints *= 1.1
+								}
+
+								if match.Home.Score < match.Away.Score {
+									accumPoints *= 0.9
+								}
+								playersWithPoints[indexPlayer].Points = accumPoints
+								break
+							}
+						}
+
+					}
+
+				}
+
+			}else if typeAlign == second {
+
+				for _, player := range eventPlayer {
+					if len(player.Events) > 0 {
+						for indexPlayer, leaguePlayer := range allLeaguePlayers {
+							if util.MatchNames(leaguePlayer.Player.Name, player.Name) {
+								accumPoints := 0.0
+								for _, event := range player.Events {
+									score, _ := strconv.Atoi(match.Home.Score)
+									accumPoints += float64(GetPlayerPointsByEvent(
+										score,
+										principal,
+										leaguePlayer.Position,
+										event,
+									))
+								}
+								if match.Home.Score > match.Away.Score {
+									accumPoints *= 1.1
+								}
+
+								if match.Home.Score < match.Away.Score {
+									accumPoints *= 0.9
+								}
+								playersWithPoints[indexPlayer].Points = accumPoints
+								break
+							}
+						}
+
+					}
+
+				}
+
+			}
+		}
+
+		for typeAlign, eventPlayer := range match.Away.Events {
+			if typeAlign == principal {
+
+				for _, player := range eventPlayer {
+					if len(player.Events) > 0 {
+						for indexPlayer, leaguePlayer := range allLeaguePlayers {
+							if util.MatchNames(leaguePlayer.Player.Name, player.Name) {
+								accumPoints := 0.0
+								for _, event := range player.Events {
+									score, _ := strconv.Atoi(match.Away.Score)
+									accumPoints += float64(GetPlayerPointsByEvent(
+										score,
+										principal,
+										leaguePlayer.Position,
+										event,
+									))
+								}
+								if match.Away.Score > match.Home.Score {
+									accumPoints *= 1.1
+								}
+
+								if match.Away.Score < match.Home.Score {
+									accumPoints *= 0.9
+								}
+								playersWithPoints[indexPlayer].Points = accumPoints
+								break
+							}
+						}
+
+					}
+
+				}
+
+			}else if typeAlign == second {
+
+				for _, player := range eventPlayer {
+					if len(player.Events) > 0 {
+						for indexPlayer, leaguePlayer := range allLeaguePlayers {
+							if util.MatchNames(leaguePlayer.Player.Name, player.Name) {
+								accumPoints := 0.0
+								for _, event := range player.Events {
+									score, _ := strconv.Atoi(match.Home.Score)
+									accumPoints += float64(GetPlayerPointsByEvent(
+										score,
+										principal,
+										leaguePlayer.Position,
+										event,
+									))
+								}
+								if match.Home.Score > match.Away.Score {
+									accumPoints *= 1.1
+								}
+
+								if match.Home.Score < match.Away.Score {
+									accumPoints *= 0.9
+								}
+								playersWithPoints[indexPlayer].Points = accumPoints
+								break
+							}
+						}
+
+					}
+
+				}
+
+			}
+		}
+	}
+
+
+	return playersWithPoints
+}
+
+func FillUserTeamsWithPlayerPoints(user *helpers.User, pPoints []*PlayerPoints) {
 	for _, eachPlayerTeam := range user.PlayingTeams {
 		totalPoints := 0.0
 		for _, p := range eachPlayerTeam.Players.Defender {
@@ -109,20 +299,9 @@ func FillUserTeamWithPlayerPoints(user *helpers.User, pPoints []*PlayerPoints) {
 	}
 }
 
-func FillPointsInPlayersList(league League, matchs []*MatchEvents) []*helpers.Player {
-	//players := make([]*helpers.Player, 0)
 
-	allLeaguePlayers := make([]*Player, 0)
-	for _, team := range league {
-		allLeaguePlayers = append(allLeaguePlayers, team.GoalKeeper...)
-		allLeaguePlayers = append(allLeaguePlayers, team.MidFielder...)
-		allLeaguePlayers = append(allLeaguePlayers, team.Defender...)
-		allLeaguePlayers = append(allLeaguePlayers, team.Forwarder...)
-	}
-	return []*helpers.Player{}
-}
 
-func GetPointsToPlayerByEvent(teamScore int, typePlaying string, position string, event *Event) int {
+func GetPlayerPointsByEvent(teamScore int, typePlaying string, position string, event *Event) int {
 	points := 0
 
 	if typePlaying == principal {
@@ -190,7 +369,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, principal, goalKeeper, ie)
+							partialPoints := GetPlayerPointsByEvent(score, principal, goalKeeper, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -216,7 +395,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, principal, midFielder, ie)
+							partialPoints := GetPlayerPointsByEvent(score, principal, midFielder, ie)
 							totalPoints += float64(partialPoints)
 
 
@@ -243,7 +422,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, principal, forward, ie)
+							partialPoints := GetPlayerPointsByEvent(score, principal, forward, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -269,7 +448,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, principal, defender, ie)
+							partialPoints := GetPlayerPointsByEvent(score, principal, defender, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -297,7 +476,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, second, goalKeeper, ie)
+							partialPoints := GetPlayerPointsByEvent(score, second, goalKeeper, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -323,7 +502,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, second, midFielder, ie)
+							partialPoints := GetPlayerPointsByEvent(score, second, midFielder, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -349,7 +528,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, second, forward, ie)
+							partialPoints := GetPlayerPointsByEvent(score, second, forward, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -375,7 +554,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, second, defender, ie)
+							partialPoints := GetPlayerPointsByEvent(score, second, defender, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -407,7 +586,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, principal, goalKeeper, ie)
+							partialPoints := GetPlayerPointsByEvent(score, principal, goalKeeper, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -433,7 +612,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, principal, midFielder, ie)
+							partialPoints := GetPlayerPointsByEvent(score, principal, midFielder, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -459,7 +638,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, principal, forward, ie)
+							partialPoints := GetPlayerPointsByEvent(score, principal, forward, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -485,7 +664,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, principal, defender, ie)
+							partialPoints := GetPlayerPointsByEvent(score, principal, defender, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -513,7 +692,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, second, goalKeeper, ie)
+							partialPoints := GetPlayerPointsByEvent(score, second, goalKeeper, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -539,7 +718,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, second, midFielder, ie)
+							partialPoints := GetPlayerPointsByEvent(score, second, midFielder, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -564,7 +743,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, second, forward, ie)
+							partialPoints := GetPlayerPointsByEvent(score, second, forward, ie)
 							totalPoints += float64(partialPoints)
 
 						}
@@ -590,7 +769,7 @@ func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEven
 						totalPoints := 0.0
 						for _, ie := range e.Events {
 
-							partialPoints := GetPointsToPlayerByEvent(score, second, defender, ie)
+							partialPoints := GetPlayerPointsByEvent(score, second, defender, ie)
 							totalPoints += float64(partialPoints)
 
 						}
