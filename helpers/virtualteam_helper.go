@@ -28,7 +28,7 @@ type VirtualTeam struct {
 	LeagueImg string    `json:"league_img" form:"league_img"`
 	CreatedAt time.Time `json:"created_at" form:"created_at"`
 	Ranking   int       `json:"ranking" form:"ranking"`
-	Points    int       `json:"points" form:"points"`
+	Points    float64       `json:"points" form:"points"`
 }
 
 // GetVirtualTeamByID ...

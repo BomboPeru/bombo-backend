@@ -4,10 +4,12 @@ import (
 	"../helpers"
 	"regexp"
 	"strings"
-	"fmt"
 	"../util"
 	"strconv"
-	"github.com/k0kubun/pp"
+	pretty "github.com/k0kubun/pp"
+	"fmt"
+	"io/ioutil"
+	"github.com/gocarina/gocsv"
 )
 
 const second = "suplentes"
@@ -30,6 +32,96 @@ type Players struct {
 	Coach      *Player   `json:"coach"`
 }
 */
+type PlayerPoints struct {
+	Name string `json:"name" csv:"Name"`
+	Team string `json:"team" csv:"Team"`
+	Position string `json:"position" csv:"Position"`
+	Cost float64 `json:"cost" csv:"Cost"`
+	Points float64 `json:"points" csv:"Points"`
+}
+
+func GetPlayersPointsFromCSV(filePath string) ([]*PlayerPoints, error) {
+	playersPoints := make([]*PlayerPoints, 0)
+
+	data, err :=ioutil.ReadFile(filePath)
+	if err != nil{
+		return playersPoints, err
+	}
+
+	err = gocsv.UnmarshalBytes(data, &playersPoints)
+	if err != nil {
+		return playersPoints, err
+	}
+
+	return playersPoints, nil
+}
+
+
+func FillUserTeamWithPlayerPoints(user *helpers.User, pPoints []*PlayerPoints) {
+	for _, eachPlayerTeam := range user.PlayingTeams {
+		totalPoints := 0.0
+		for _, p := range eachPlayerTeam.Players.Defender {
+			for _, pp := range pPoints {
+				if util.MatchNames(p.Name, pp.Name) {
+					totalPoints += pp.Points
+					strPoints := strconv.FormatFloat(pp.Points, 'f', -1, 64)
+					p.Points = strPoints
+					break
+				}
+			}
+		}
+
+		for _, p := range eachPlayerTeam.Players.MidFielder {
+			for _, pp := range pPoints {
+				if util.MatchNames(p.Name, pp.Name) {
+					totalPoints += pp.Points
+					strPoints := strconv.FormatFloat(pp.Points, 'f', -1, 64)
+					p.Points = strPoints
+					break
+				}
+			}
+		}
+
+		for _, p := range eachPlayerTeam.Players.GoalKeeper {
+			for _, pp := range pPoints {
+				if util.MatchNames(p.Name, pp.Name) {
+					totalPoints += pp.Points
+					strPoints := strconv.FormatFloat(pp.Points, 'f', -1, 64)
+					p.Points = strPoints
+					break
+				}
+			}
+		}
+
+		for _, p := range eachPlayerTeam.Players.Forward {
+			for _, pp := range pPoints {
+				if util.MatchNames(p.Name, pp.Name) {
+					totalPoints += pp.Points
+					strPoints := strconv.FormatFloat(pp.Points, 'f', -1, 64)
+					p.Points = strPoints
+					break
+				}
+			}
+		}
+
+		eachPlayerTeam.Points = totalPoints
+
+	}
+}
+
+func FillPointsInPlayersList(league League, matchs []*MatchEvents) []*helpers.Player {
+	//players := make([]*helpers.Player, 0)
+
+	allLeaguePlayers := make([]*Player, 0)
+	for _, team := range league {
+		allLeaguePlayers = append(allLeaguePlayers, team.GoalKeeper...)
+		allLeaguePlayers = append(allLeaguePlayers, team.MidFielder...)
+		allLeaguePlayers = append(allLeaguePlayers, team.Defender...)
+		allLeaguePlayers = append(allLeaguePlayers, team.Forwarder...)
+	}
+	return []*helpers.Player{}
+}
+
 func GetPointsToPlayerByEvent(teamScore int, typePlaying string, position string, event *Event) int {
 	points := 0
 
@@ -47,7 +139,7 @@ func GetPointsToPlayerByEvent(teamScore int, typePlaying string, position string
 		as := assistSearcher.Find([]byte(event.Metadata))
 		assist := strings.Replace(string(as), "(", "", -1)
 		assist = strings.Replace(assist, ")", "", -1)
-		fmt.Printf("assist by %s\n", assist)
+		//fmt.Printf("assist by %s\n", assist)
 		switch position {
 		case goalKeeper:
 			points += 8
@@ -81,8 +173,7 @@ func GetPointsToPlayerByEvent(teamScore int, typePlaying string, position string
 	return points
 }
 
-
-func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *helpers.VirtualTeam {
+func GetFilledTeamWithMatchEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *helpers.VirtualTeam {
 
 	team := new(helpers.VirtualTeam)
 	*team = *realTeam
@@ -96,15 +187,22 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Home.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, principal, goalKeeper, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Away.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -115,15 +213,23 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Home.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, principal, midFielder, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
+
 						}
+						score2, _ := strconv.Atoi(event.Away.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -134,15 +240,22 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Home.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, principal, forward, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Away.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -153,15 +266,22 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Home.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, principal, defender, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Away.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -174,15 +294,22 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Home.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, second, goalKeeper, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Away.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -193,15 +320,22 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Home.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, second, midFielder, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Away.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -212,15 +346,22 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Home.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, second, forward, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Away.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -231,15 +372,22 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Home.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, second, defender, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Away.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -256,34 +404,48 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Away.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, principal, goalKeeper, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Home.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
 
 				for _, p := range team.Players.MidFielder {
 					if util.MatchNames(e.Name, p.Name) {
-						score, _ := strconv.Atoi(event.Away.Score)
+						score, _ := strconv.Atoi(event.Home.Score)
 						if event.Away.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, principal, midFielder, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Home.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -294,15 +456,22 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Away.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, principal, forward, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Home.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -313,15 +482,22 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Away.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, principal, defender, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Home.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -334,15 +510,22 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Away.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, second, goalKeeper, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Home.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -353,16 +536,22 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Away.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, second, midFielder, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
-
+						score2, _ := strconv.Atoi(event.Home.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 					}
 				}
 
@@ -372,15 +561,22 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Away.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, second, forward, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Home.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
@@ -391,21 +587,52 @@ func GetFilledTeamWithEvent(realTeam *helpers.VirtualTeam, event *MatchEvents) *
 						if event.Away.Score == "-" {
 							score = 0
 						}
-						totalPoints := 0
+						totalPoints := 0.0
 						for _, ie := range e.Events {
 
 							partialPoints := GetPointsToPlayerByEvent(score, second, defender, ie)
-							totalPoints += partialPoints
+							totalPoints += float64(partialPoints)
 
-							points := strconv.Itoa(totalPoints)
-							p.Points = points
 						}
+						score2, _ := strconv.Atoi(event.Home.Score)
+						if score > score2 {
+							totalPoints *= 1.1
+						}
+						if score < score2 {
+							totalPoints *= 0.9
+						}
+						points := strconv.FormatFloat(totalPoints, 'f', -1, 64)
+						p.Points = points
 
 					}
 				}
 			}
 		}
 	}
+	totalTeamPoints := 0.0
+
+	for _, p := range team.Players.Forward {
+		points, _ := strconv.ParseFloat(p.Points, 64)
+		totalTeamPoints += float64(points)
+	}
+
+	for _, p := range team.Players.Defender {
+		points, _ := strconv.ParseFloat(p.Points, 64)
+		totalTeamPoints += float64(points)
+	}
+
+	for _, p := range team.Players.MidFielder {
+		points, _ := strconv.ParseFloat(p.Points, 64)
+		totalTeamPoints += float64(points)
+	}
+
+	for _, p := range team.Players.GoalKeeper{
+		points, _ := strconv.ParseFloat(p.Points, 64)
+		totalTeamPoints += float64(points)
+	}
+
+	team.Points = totalTeamPoints
+
 	return team
 }
 
@@ -413,8 +640,9 @@ func FillTeamsUser(user *helpers.User, events []*MatchEvents) {
 
 	for _, team := range user.PlayingTeams {
 		for _, event := range events {
-			filledTeam := GetFilledTeamWithEvent(team, event)
-			pp.Println(filledTeam)
+			filledTeam := GetFilledTeamWithMatchEvent(team, event)
+
+			pretty.Println(filledTeam.Points, fmt.Sprintf("%s vs %s", event.Home.Name, event.Away.Name))
 		}
 		return
 

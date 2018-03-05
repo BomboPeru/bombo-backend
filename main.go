@@ -36,24 +36,6 @@ func main() {
 
 	app.Logger().SetLevel("debug")
 
-
 	app.Run(iris.Addr(":8080"))
-
-	//id, _ := uuid.FromString("08e4b723-8e19-4828-8604-0df593dcad62")
-	//user, err := helpers.GetUserByID(id)
-	//if err != nil {
-	//	panic(err)
-	//}
-	//
-	//events, err := external.GetAllActiveEvents()
-	//
-	//pp.Println(user)
-	//
-	//if err != nil {
-	//	panic(err)
-	//}
-	//
-	//external.FillTeamsUser(user, events)
-
 
 }

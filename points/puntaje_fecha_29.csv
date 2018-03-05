@@ -1,0 +1,552 @@
+Name,Team,Position,Cost,Points
+Cech Petr,Arsenal,goal_keeper,7.2,1.8
+Iliev Dejan,Arsenal,goal_keeper,4.5,0
+Macey Matt,Arsenal,goal_keeper,6.8,0
+Ospina David,Arsenal,goal_keeper,6.5,0
+Bellerín Héctor,Arsenal,defender,8.1,0.9
+Chambers Calum,Arsenal,defender,6.4,0.9
+Holding Rob,Arsenal,defender,6,0
+Kolasinac Sead,Arsenal,defender,7.9,0.9
+Koscielny Laurent,Arsenal,defender,8.1,1.8
+Mavropanos Konstantinos,Arsenal,defender,5.8,0
+Mertesacker Per,Arsenal,defender,6.4,0
+Monreal Nacho,Arsenal,defender,7.7,0
+Mustafi Shkodran,Arsenal,defender,7.3,1.8
+Osei-Tutu Jordi,Arsenal,defender,4.5,0
+Dasilva Pelenda,Arsenal,midfielder,4.5,0
+Dragomir Vlad,Arsenal,midfielder,4.5,0
+Elneny Mohamed,Arsenal,midfielder,5.7,0
+Gilmour Charlie,Arsenal,midfielder,4.5,0
+Iwobi Alex,Arsenal,midfielder,6.9,0.9
+Maitland-Niles Ainsley,Arsenal,midfielder,6.1,0
+Mkhitaryan Henrikh,Arsenal,midfielder,10.6,0.9
+Ramsey Aaron,Arsenal,midfielder,9.4,0
+Sheaf Ben,Arsenal,midfielder,4.5,0
+Wilshere Jack,Arsenal,midfielder,7.2,0.9
+Xhaka Granit,Arsenal,midfielder,7,4.5
+Özil Mesut,Arsenal,midfielder,12.6,1.8
+Aubameyang Pierre-Emerick,Arsenal,forwarder,14.3,7.2
+Lacazette Alexandre,Arsenal,forwarder,13.9,0
+Nelson Reiss,Arsenal,forwarder,6.4,0
+Nketiah Edward,Arsenal,forwarder,6.8,0.9
+Welbeck Danny,Arsenal,forwarder,9.9,0.9
+Willock Joseph,Arsenal,forwarder,4.5,0
+Begovic Asmir,Bournemouth,goal_keeper,6.1,2
+Boruc Artur,Bournemouth,goal_keeper,5.5,0
+Federici Adam,Bournemouth,goal_keeper,5.4,0
+Ake Nathan,Bournemouth,defender,6.8,2
+Cook Steve,Bournemouth,defender,6.2,2
+Francis Simon,Bournemouth,defender,5.8,2
+Mings Tyrone,Bournemouth,defender,5.8,0
+Smith Adam,Bournemouth,defender,6.5,2
+Smith Bradley,Bournemouth,defender,5.3,0
+Arter Harry,Bournemouth,midfielder,6.4,0
+Butcher Matt,Bournemouth,midfielder,6.1,0
+Cook Lewis,Bournemouth,midfielder,5.8,2
+Daniels Charlie,Bournemouth,midfielder,6.4,2
+Fraser Ryan,Bournemouth,midfielder,6.9,0
+Gosling Dan,Bournemouth,midfielder,6.5,1
+Hyndman Emerson,Bournemouth,midfielder,6.1,0
+Mousset Lys,Bournemouth,midfielder,6.6,1
+Stanislas Junior,Bournemouth,midfielder,8,2
+Surman Andrew,Bournemouth,midfielder,6.1,1
+Taylor Kyle,Bournemouth,midfielder,6.1,0
+Defoe Jermain,Bournemouth,forwarder,10.3,0
+Ibe Jordon,Bournemouth,forwarder,6.6,0
+King Joshua,Bournemouth,forwarder,9.5,7
+Ndjoli Mikael,Bournemouth,forwarder,4.5,0
+Wilson Callum,Bournemouth,forwarder,8.1,1
+Krul Tim,Brighton,goal_keeper,5.4,0
+Maenpaa Niki,Brighton,goal_keeper,4.5,0
+Ryan Mathew,Brighton,goal_keeper,6.1,2.2
+Bong Gaetan,Brighton,defender,6,2.2
+Duffy Shane,Brighton,defender,6.2,6.6
+Dunk Lewis,Brighton,defender,6.1,11
+Goldson Connor,Brighton,defender,5.3,0
+Hunemeier Uwe,Brighton,defender,4.5,0
+Mateju Ales,Brighton,defender,4.5,0
+Rosenior Liam,Brighton,defender,5.3,0
+Saltor Bruno,Brighton,defender,6.1,1.1
+Suttner Markus,Brighton,defender,5.8,0
+Gross Pascal,Brighton,midfielder,8,5.5
+Hutchinson Desmond,Brighton,midfielder,4.5,0
+Kayal Biram,Brighton,midfielder,6,1.1
+Knockaert Anthony,Brighton,midfielder,7.5,1.1
+March Solomon,Brighton,midfielder,6.5,1.1
+Molumby Jayson,Brighton,midfielder,6.1,0
+Propper Davy,Brighton,midfielder,4.5,2.2
+Schelotto Ezequiel,Brighton,midfielder,6,0
+Skalak Jiri,Brighton,midfielder,6.4,0
+Baldock Sam,Brighton,forwarder,6.6,0
+Hemed Tomer,Brighton,forwarder,6.4,0
+Izquierdo Jose,Brighton,forwarder,8,2.2
+Locadia Jurgen,Brighton,forwarder,8.1,0
+Murray Glenn,Brighton,forwarder,7.7,7.7
+Ulloa Leonardo,Brighton,forwarder,6.5,0
+Heaton Tom,Burnley,goal_keeper,6.4,0
+Legzdins Adam,Burnley,goal_keeper,5.4,0
+Lindegaard Anders,Burnley,goal_keeper,5.4,0
+Pope Nick,Burnley,goal_keeper,6.6,2.2
+Bardsley Phillip,Burnley,defender,5.8,0
+Long Kevin,Burnley,defender,5.5,0
+Lowton Matthew,Burnley,defender,5.8,6.6
+Mee Ben,Burnley,defender,6.6,2.2
+Tarkowski James,Burnley,defender,6.1,2.2
+Ward Stephen,Burnley,defender,6.4,2.2
+Arfield Scott,Burnley,midfielder,6.6,0
+Brady Robbie,Burnley,midfielder,7.2,0
+Cork Jack,Burnley,midfielder,6.2,2.2
+Defour Steven,Burnley,midfielder,7.3,0
+Hendrick Jeff,Burnley,midfielder,7.3,1.1
+Marney Dean,Burnley,midfielder,6,0
+N'Koudou Georges-Kevin,Burnley,midfielder,7.3,0
+O'Neill Aiden,Burnley,midfielder,6.1,0
+Taylor Charlie,Burnley,midfielder,5.7,0
+Westwood Ashley,Burnley,midfielder,5.8,1.1
+Barnes Ashley,Burnley,forwarder,7,8.8
+Gudmundsson Johann,Burnley,forwarder,6.9,6.6
+Lennon Aaron,Burnley,forwarder,7.3,2.2
+Vokes Sam,Burnley,forwarder,7.7,0
+Walters Jonathan,Burnley,forwarder,6.9,0
+Wells Nahki,Burnley,forwarder,6.6,0
+Wood Chris,Burnley,forwarder,8.4,7.7
+Caballero Wilfredo,Chelsea,goal_keeper,6.5,0
+Courtois Thibaut,Chelsea,goal_keeper,7.3,1.8
+Eduardo,Chelsea,goal_keeper,6.4,0
+Alonso Marcos,Chelsea,defender,9.8,1.8
+Azpilicueta Cesar,Chelsea,defender,9.5,1.8
+Cahill Gary,Chelsea,defender,8.4,0
+Chalobah Trevoh,Chelsea,defender,5.7,0
+Christensen Andreas,Chelsea,defender,7.2,1.8
+Emerson,Chelsea,defender,7.3,0.9
+Luiz David,Chelsea,defender,7.7,0
+Moses Victor,Chelsea,defender,8.7,1.8
+Rudiger Antonio,Chelsea,defender,8,0.9
+Sterling Dujon,Chelsea,defender,6.1,0
+Zappacosta Davide,Chelsea,defender,8,0
+Ampadu Ethan,Chelsea,midfielder,6.1,0
+Bakayoko Tiémoué,Chelsea,midfielder,6.6,0
+Barkley Ross,Chelsea,midfielder,9.9,0
+Drinkwater Daniel,Chelsea,midfielder,6.5,1.8
+Fàbregas Cesc,Chelsea,midfielder,9.2,1.8
+Hazard Eden,Chelsea,midfielder,14.5,0.9
+Hudson-Odoi Callum,Chelsea,midfielder,6.1,0
+Kanté N'Golo,Chelsea,midfielder,6.6,0
+Pedro,Chelsea,midfielder,10.5,0.9
+Scott Kyle,Chelsea,midfielder,5.8,0
+Willian,Chelsea,midfielder,9.2,0.9
+Giroud Olivier,Chelsea,forwarder,11.1,0.9
+Morata Álvaro,Chelsea,forwarder,14.1,0.9
+Hennessey Wayne,Crystal Palace,goal_keeper,5.8,0
+Henry Dion,Crystal Palace,goal_keeper,5.4,0
+Speroni Julian,Crystal Palace,goal_keeper,5.5,0
+Dann Scott,Crystal Palace,defender,6.2,0
+Delaney Damien,Crystal Palace,defender,5.7,0
+Fosu-Mensah Timothy,Crystal Palace,defender,6,0
+Jach Jaroslaw,Crystal Palace,defender,6,0
+Kelly Martin,Crystal Palace,defender,5.7,0
+Riedewald Jairo,Crystal Palace,defender,6.2,0
+Sakho Mamadou,Crystal Palace,defender,6.4,0
+Souare Pape,Crystal Palace,defender,6.1,0
+Tomkins James,Crystal Palace,defender,6,0
+Ward Joel,Crystal Palace,defender,6.4,0
+van Aanholt Patrick,Crystal Palace,defender,6.9,0
+Cabaye Yohan,Crystal Palace,midfielder,7.2,0
+Kirby Nya,Crystal Palace,midfielder,6.1,0
+Loftus-Cheek Ruben,Crystal Palace,midfielder,6,0
+McArthur James,Crystal Palace,midfielder,5.8,0
+Milivojevic Luka,Crystal Palace,midfielder,6.6,0
+Mutch Jordon,Crystal Palace,midfielder,6.1,0
+Phillips Michael,Crystal Palace,midfielder,4.5,0
+Puncheon Jason,Crystal Palace,midfielder,6,0
+Sako Bakary,Crystal Palace,midfielder,6.6,0
+Townsend Andros,Crystal Palace,midfielder,7.6,0
+Benteke Christian,Crystal Palace,forwarder,10.3,0
+Eyenga-Lokilo Jason,Crystal Palace,forwarder,4.5,0
+Lee Chung-Yong,Crystal Palace,forwarder,5.7,0
+Rakip Erdal,Crystal Palace,forwarder,6.8,0
+Schlupp Jeffery,Crystal Palace,forwarder,6.4,0
+Sorloth Alexander,Crystal Palace,forwarder,4.5,0
+Zaha Wilfried,Crystal Palace,forwarder,9.2,0
+Hewelt Mateusz,Everton,goal_keeper,4.5,0
+Pickford Jordan,Everton,goal_keeper,6.6,1.8
+Robles Joel,Everton,goal_keeper,5.7,0
+Stekelenburg Maarten,Everton,goal_keeper,5.7,0
+Baines Leighton,Everton,defender,7.6,0
+Coleman Seamus,Everton,defender,8.7,5.4
+Garbutt Luke,Everton,defender,5.4,0
+Holgate Mason,Everton,defender,5.7,0
+Jagielka Phil,Everton,defender,6.4,0
+Keane Michael,Everton,defender,7.2,1.8
+Kenny Jonjoe,Everton,defender,5.8,0
+Mangala Eliaquim,Everton,defender,6.8,0
+Martina Cuco,Everton,defender,6,1.8
+Williams Ashley,Everton,defender,7,-0.9
+Baningime Beni,Everton,midfielder,6.1,0
+Bolasie Yannick,Everton,midfielder,8.7,0.9
+Davies Tom,Everton,midfielder,6.9,0.9
+Denny Alexander,Everton,midfielder,4.5,0
+Duke-McKenna Stephen,Everton,midfielder,4.5,0
+Gordon Anthony,Everton,midfielder,4.5,0
+Gueye Idrissa,Everton,midfielder,6.5,1.8
+Hornby Fraser,Everton,midfielder,4.5,0
+Klaassen Davy,Everton,midfielder,9.4,0
+Lavery Shayne,Everton,midfielder,4.5,0
+McCarthy James,Everton,midfielder,6.6,0
+Schneiderlin Morgan,Everton,midfielder,6.4,0
+Sigurdsson Gylfi,Everton,midfielder,10.9,0.9
+Vlasic Nikola,Everton,midfielder,7.3,0
+Broadhead Nathan,Everton,forwarder,4.5,0
+Calvert-Lewin Dominic,Everton,forwarder,6.9,0.9
+Niasse Oumar,Everton,forwarder,6.6,0.9
+Rooney Wayne,Everton,forwarder,9.8,0.9
+Tosun Cenk,Everton,forwarder,9.2,6.3
+Walcott Theo,Everton,forwarder,9.9,1.8
+Coleman Joel,Huddersfield,goal_keeper,5.3,0
+Green Robert,Huddersfield,goal_keeper,5.4,0
+Lossl Jonas,Huddersfield,goal_keeper,6.2,1.8
+Hefele Michael,Huddersfield,defender,5.7,0
+Kongolo Terence,Huddersfield,defender,6,1.8
+Lowe Chris,Huddersfield,defender,6,0
+Malone Scott,Huddersfield,defender,5.8,0
+Schindler Christopher,Huddersfield,defender,6.2,1.8
+Smith Tom,Huddersfield,defender,6.4,0
+Zanka,Huddersfield,defender,6.1,1.8
+Billing Philip,Huddersfield,midfielder,6,0.9
+Hadergjonaj Florent,Huddersfield,midfielder,6.1,1.8
+Hogg Jonathan,Huddersfield,midfielder,6,0
+Mooy Aaron,Huddersfield,midfielder,7.2,0
+O'Brien Lewis,Huddersfield,midfielder,4.5,0
+Pritchard Alex,Huddersfield,midfielder,7.3,0.9
+Whitehead Dean,Huddersfield,midfielder,5.8,0
+Williams Daniel,Huddersfield,midfielder,6.5,1.8
+van La Parra Rajiv,Huddersfield,midfielder,6.5,1.8
+Depoitre Laurent,Huddersfield,forwarder,7,0.9
+Ince Tom,Huddersfield,forwarder,7.5,0.9
+Kachunga Elias,Huddersfield,forwarder,7.7,0
+Mounie Steve,Huddersfield,forwarder,7.7,1.8
+Quaner Collin,Huddersfield,forwarder,6.2,0.9
+Scannell Sean,Huddersfield,forwarder,6.1,0
+Hamer Ben,Leicester,goal_keeper,5.8,0
+Jakupovic Eldin,Leicester,goal_keeper,5.7,0
+Schmeichel Kasper,Leicester,goal_keeper,6.8,2
+Benalouane Yohan,Leicester,defender,5.7,0
+Chilwell Benjamin,Leicester,defender,5.8,1
+Dragovic Aleksandar,Leicester,defender,6.6,0
+Fuchs Christian,Leicester,defender,6.5,1
+Huth Robert,Leicester,defender,6.5,0
+Maguire Harry,Leicester,defender,7.5,1
+Morgan Wes,Leicester,defender,6,2
+Ndidi Wilfred,Leicester,defender,6.6,2
+Simpson Danny,Leicester,defender,5.8,0
+Albrighton Marc,Leicester,midfielder,7.6,2
+Amartey Daniel,Leicester,midfielder,5.8,1
+Barnes Harvey,Leicester,midfielder,7,0
+Diabate Fousseni,Leicester,midfielder,6.8,1
+Gray Demarai,Leicester,midfielder,7.2,0
+Iborra,Leicester,midfielder,7.7,0
+James Matthew,Leicester,midfielder,6,2
+Mahrez Riyad,Leicester,midfielder,11.8,9
+Silva Adrien,Leicester,midfielder,8.1,0
+Thomas George,Leicester,midfielder,6.1,0
+Iheanacho Kelechi,Leicester,forwarder,8.8,1
+Okazaki Shinji,Leicester,forwarder,7.2,0
+Vardy Jamie,Leicester,forwarder,11.6,2
+Karius Loris,Liverpool,goal_keeper,6.5,8.8
+Mignolet Simon,Liverpool,goal_keeper,6.5,0
+Ward Danny,Liverpool,goal_keeper,6,0
+Alexander-Arnold Trent,Liverpool,defender,5.8,5.5
+Gomez Joe,Liverpool,defender,6.4,0
+Klavan Ragnar,Liverpool,defender,5.8,0
+Lovren Dejan,Liverpool,defender,7.2,5.5
+Matip Joel,Liverpool,defender,7.3,4.4
+Milner James,Liverpool,defender,8.1,1.1
+Moreno Alberto,Liverpool,defender,6,0
+Robertson Andrew,Liverpool,defender,6.5,5.5
+Van Dijk Virgil,Liverpool,defender,7.6,5.5
+Can Emre,Liverpool,midfielder,6.1,2.2
+Henderson Jordan,Liverpool,midfielder,7.2,2.2
+Lallana Adam,Liverpool,midfielder,9.9,1.1
+Mané Sadio,Liverpool,midfielder,12.8,8.8
+Oxlade-C. Alex,Liverpool,midfielder,7.6,5.5
+Salah Mohamed,Liverpool,midfielder,14.3,9.9
+Wijnaldum Georginio,Liverpool,midfielder,9,0
+Firmino Roberto,Liverpool,forwarder,12.6,5.5
+Ings Danny,Liverpool,forwarder,7.3,0
+Solanke Dominic,Liverpool,forwarder,6.4,0
+Woodburn Benjamin,Liverpool,forwarder,5.7,0
+Bravo Claudio,Manchester City,goal_keeper,6.2,0
+Ederson,Manchester City,goal_keeper,7.6,8.8
+Adarabioyo Oluwatosin,Manchester City,defender,5.4,0
+Danilo,Manchester City,defender,6.8,1.1
+Duhaney Demeaco,Manchester City,defender,4.5,0
+Kompany Vincent,Manchester City,defender,7.9,0
+Laporte Aymeric,Manchester City,defender,7.3,5.5
+Mendy Benjamin,Manchester City,defender,8.5,0
+Otamendi Nicolas,Manchester City,defender,8.7,5.5
+Stones John,Manchester City,defender,7.3,0
+Walker Kyle,Manchester City,defender,9,5.5
+De Bruyne Kevin,Manchester City,midfielder,14.1,2.2
+Dele-Bashiru Ayotomiwa,Manchester City,midfielder,4.5,0
+Delph Fabian,Manchester City,midfielder,6.1,0
+Díaz Brahim,Manchester City,midfielder,6.4,0
+Fernandinho,Manchester City,midfielder,6.9,0
+Foden Phil,Manchester City,midfielder,6.4,1.1
+Gündogan Ilkay,Manchester City,midfielder,7.2,1.1
+Sané Leroy,Manchester City,midfielder,11.3,2.2
+Silva Bernardo,Manchester City,midfielder,10,9.9
+Silva David,Manchester City,midfielder,10.7,5.5
+Sterling Raheem,Manchester City,midfielder,12.1,0
+Touré Yaya,Manchester City,midfielder,8.1,0
+Zinchenko Oleksandr,Manchester City,midfielder,6.8,0
+Agüero Sergio,Manchester City,forwarder,16.3,1.1
+Gabriel Jesus,Manchester City,forwarder,13.5,1.1
+Nmecha Lukas,Manchester City,forwarder,6.1,0
+Pereira Joel,Manchester Utd,goal_keeper,5.4,0
+Romero Sergio,Manchester Utd,goal_keeper,6.4,0
+de Gea David,Manchester Utd,goal_keeper,8,0
+Bailly Eric Bertrand,Manchester Utd,defender,8.1,0
+Darmian Matteo,Manchester Utd,defender,6.6,0
+Jones Phil,Manchester Utd,defender,7.6,0
+Lindelof Victor,Manchester Utd,defender,6.6,0
+Rojo Marcos,Manchester Utd,defender,7.3,0
+Shaw Luke,Manchester Utd,defender,6.6,0
+Smalling Chris,Manchester Utd,defender,7.3,0
+Valencia Antonio,Manchester Utd,defender,9.4,0
+Blind Daley,Manchester Utd,midfielder,6.9,0
+Carrick Michael,Manchester Utd,midfielder,5.7,0
+Fellaini Marouane,Manchester Utd,midfielder,6.4,0
+Gomes Angel,Manchester Utd,midfielder,6.1,0
+Hamilton Ethan,Manchester Utd,midfielder,4.5,0
+Herrera Ander,Manchester Utd,midfielder,6.8,0
+Lingard Jesse,Manchester Utd,midfielder,8.3,0
+Mata Juan Manuel,Manchester Utd,midfielder,9.2,0
+Matic Nemanja,Manchester Utd,midfielder,6.4,0
+McTominay Scott,Manchester Utd,midfielder,5.7,0
+Pogba Paul,Manchester Utd,midfielder,10.7,0
+Young Ashley,Manchester Utd,midfielder,6.6,0
+Ibrahimovic Zlatan,Manchester Utd,forwarder,12.9,0
+Lukaku Romelu,Manchester Utd,forwarder,15.2,0
+Martial Anthony,Manchester Utd,forwarder,10.9,0
+Rashford Marcus,Manchester Utd,forwarder,10,0
+Sánchez Alexis,Manchester Utd,forwarder,15.9,0
+Darlow Karl,Newcastle,goal_keeper,6,0
+Dubravka Martin,Newcastle,goal_keeper,6.1,1.8
+Elliot Rob,Newcastle,goal_keeper,5.5,0
+Clark Ciaran,Newcastle,defender,6,0
+Dummett Paul,Newcastle,defender,5.7,1.8
+Gámez Jesus,Newcastle,defender,5.3,0
+Haidara Massadio,Newcastle,defender,5.3,0
+Hayden Isaac,Newcastle,defender,6,0.9
+Lascelles Jamaal,Newcastle,defender,6.4,1.8
+Lejeune Florian,Newcastle,defender,5.8,1.8
+Manquillo Javier,Newcastle,defender,5.8,0
+Mbemba Chancel,Newcastle,defender,5.3,0
+Yedlin DeAndre,Newcastle,defender,6,1.8
+Diamé Mohamed,Newcastle,midfielder,6.2,1.8
+Kenedy,Newcastle,midfielder,6.4,1.8
+Merino Mikel,Newcastle,midfielder,6.8,0.9
+Murphy Jacob,Newcastle,midfielder,6.8,0.9
+Ritchie Matt,Newcastle,midfielder,7.3,0
+Shelvey Jonjo,Newcastle,midfielder,7,0
+Atsu Christian,Newcastle,forwarder,6.5,1.8
+Gayle Dwight,Newcastle,forwarder,8.3,0.9
+Joselu,Newcastle,forwarder,7.5,0.9
+Pérez Ayoze,Newcastle,forwarder,7,0.9
+Slimani Islam,Newcastle,forwarder,9,0
+Forster Fraser,Southampton,goal_keeper,6.4,0
+McCarthy Alex,Southampton,goal_keeper,6,8
+Bednarek Jan,Southampton,defender,5.5,0
+Bertrand Ryan,Southampton,defender,7.2,5
+Cedric Alves,Southampton,defender,6.4,5
+Hoedt Wesley,Southampton,defender,6.8,5
+Stephens Jack,Southampton,defender,6.1,5
+Yoshida Maya,Southampton,defender,6.2,0
+Boufal Sofiane,Southampton,midfielder,7.7,1
+Davis Steven,Southampton,midfielder,6.4,0
+Hojbjerg Pierre-Emile,Southampton,midfielder,5.8,0
+Lemina Mario,Southampton,midfielder,6.5,2
+McQueen Sam,Southampton,midfielder,5.7,0
+Redmond Nathan,Southampton,midfielder,8,2
+Romeu Oriol,Southampton,midfielder,5.8,2
+Sims Joshua,Southampton,midfielder,5.8,1
+Tadic Dusan,Southampton,midfielder,8.4,1
+Ward-Prowse James,Southampton,midfielder,6.9,0
+Austin Charlie,Southampton,forwarder,8,0
+Carrillo Guido,Southampton,forwarder,8.8,1
+Gabbiadini Manolo,Southampton,forwarder,8.4,1
+Long Shane,Southampton,forwarder,7.6,1
+Obafemi Michael,Southampton,forwarder,6.1,0
+Pied Jeremy,Southampton,forwarder,5.7,0
+Butland Jack,Stoke,goal_keeper,6.8,8
+Grant Lee,Stoke,goal_keeper,4.5,0
+Haugaard Jakob,Stoke,goal_keeper,5.4,0
+Bauer Moritz,Stoke,defender,6.1,5
+Edwards Thomas,Stoke,defender,5.4,0
+Johnson Glen,Stoke,defender,5.5,0
+Martins Indi Bruno,Stoke,defender,6.6,5
+Pieters Erik,Stoke,defender,6.4,4
+Shawcross Ryan,Stoke,defender,6.5,0
+Stafylidis Konstantinos,Stoke,defender,6,4
+Wimmer Kevin,Stoke,defender,5.5,0
+Zouma Kurt,Stoke,defender,7.3,5
+Adam Charles Graham,Stoke,midfielder,6.4,0
+Afellay Ibrahim,Stoke,midfielder,6.5,0
+Allen Joe,Stoke,midfielder,6.9,2
+Cameron Geoff,Stoke,midfielder,5.8,1
+Fletcher Darren,Stoke,midfielder,6.5,0
+Ireland Stephen,Stoke,midfielder,6.1,0
+Ndiaye Papa,Stoke,midfielder,7.5,2
+Shaqiri Xherdan,Stoke,midfielder,8.4,2
+Sobhi Ramadan,Stoke,midfielder,6.1,0
+Berahino Saido,Stoke,forwarder,7.6,0
+Campbell Tyrese,Stoke,forwarder,6.1,0
+Choupo-Moting Maxim,Stoke,forwarder,7.3,1
+Crouch Peter,Stoke,forwarder,6.5,1
+Diouf Mame,Stoke,forwarder,7.2,1
+Jesé,Stoke,forwarder,7.3,1
+Fabianski Lukasz,Swansea,goal_keeper,6.4,2.2
+Mulder Erwin,Swansea,goal_keeper,5.4,0
+Nordfeldt Kristoffer,Swansea,goal_keeper,5.4,0
+Bartley Kyle,Swansea,defender,5.8,0
+Fernández Federico,Swansea,defender,6.1,2.2
+James Daniel,Swansea,defender,4.5,0
+Mawson Alfie,Swansea,defender,6.9,2.2
+Naughton Kyle,Swansea,defender,6.2,2.2
+Olsson Martin,Swansea,defender,6.8,2.2
+Rangel Angel,Swansea,defender,5.3,0
+Roberts Connor,Swansea,defender,5.4,0
+van der Hoorn Mike,Swansea,defender,6,11
+Ayew André,Swansea,midfielder,9.2,1.1
+Britton Leon,Swansea,midfielder,6,0
+Carroll Thomas,Swansea,midfielder,5.8,1.1
+Clucas Sam,Swansea,midfielder,6.4,1.1
+Dyer Nathan,Swansea,midfielder,6,1.1
+Fer Leroy,Swansea,midfielder,7,0
+Ki Sung-Yong,Swansea,midfielder,6.6,14.3
+King Andy,Swansea,midfielder,5.7,8.8
+Maric Adnan,Swansea,midfielder,4.5,0
+Routledge Wayne,Swansea,midfielder,6.9,0
+Sanches Renato,Swansea,midfielder,5.8,0
+Abraham Tammy,Swansea,forwarder,7.3,1.1
+Ayew Jordan,Swansea,forwarder,7.3,13.2
+Bony Wilfried,Swansea,forwarder,7.7,0
+Narsingh Luciano,Swansea,forwarder,6.4,0
+Gazzaniga Paulo,Tottenham,goal_keeper,5.7,0
+Lloris Hugo,Tottenham,goal_keeper,7.3,8.8
+Vorm Michel,Tottenham,goal_keeper,6.5,0
+Whiteman Alfie,Tottenham,goal_keeper,5.4,0
+Alderweireld Toby,Tottenham,defender,7.9,0
+Aurier Serge,Tottenham,defender,8,5.5
+Davies Ben,Tottenham,defender,7.9,5.5
+Foyth Juan,Tottenham,defender,6.1,0
+Rose Danny,Tottenham,defender,8.7,0
+Sánchez Davinson,Tottenham,defender,8.1,5.5
+Trippier Kieran,Tottenham,defender,7.2,0
+Vertonghen Jan,Tottenham,defender,8.1,5.5
+Walker-Peters Kyle,Tottenham,defender,5.4,0
+Alli Dele,Tottenham,midfielder,12.1,4.4
+Dembélé Mousa,Tottenham,midfielder,6.6,1.1
+Dier Eric,Tottenham,midfielder,6.4,2.2
+Eriksen Christian,Tottenham,midfielder,12.6,2.2
+Georgiou Anthony,Tottenham,midfielder,4.5,0
+Lamela Erik,Tottenham,midfielder,8.5,1.1
+Lucas,Tottenham,midfielder,10.9,1.1
+Oakley-Boothe Tashan,Tottenham,midfielder,6.1,0
+Sissoko Moussa,Tottenham,midfielder,7.2,1.1
+Wanyama Victor,Tottenham,midfielder,6.5,0
+Winks Harry,Tottenham,midfielder,6.5,0
+Kane Harry,Tottenham,forwarder,17.5,6.6
+Llorente Fernando,Tottenham,forwarder,9.9,0
+Son Heung-Min,Tottenham,forwarder,11,14.3
+Sterling Kazaiah,Tottenham,forwarder,4.5,0
+Bachmann Daniel,Watford,goal_keeper,5.4,0
+Gomes Heurelho,Watford,goal_keeper,6.1,0
+Karnezis Orestis,Watford,goal_keeper,6.1,8.8
+Britos Miguel Ángel,Watford,defender,5.8,4.4
+Holebas Jose,Watford,defender,6.5,4.4
+Janmaat Daryl,Watford,defender,6.5,5.5
+Kabasele Christian,Watford,defender,6.1,0
+Kaboul Younes,Watford,defender,5.7,0
+Mariappa Adrian,Watford,defender,5.5,4.4
+Mukena Joy,Watford,defender,5.4,0
+Prodl Sebastian,Watford,defender,5.8,5.5
+Wague Molla,Watford,defender,6.1,0
+Zeegelaar Marvin,Watford,defender,5.8,0
+Capoue Etienne,Watford,midfielder,6.5,1.1
+Chalobah Nathaniel,Watford,midfielder,5.7,0
+Cleverley Tom,Watford,midfielder,6.8,0
+Deulofeu Gerard,Watford,midfielder,8.1,0
+Doucouré Abdoulaye,Watford,midfielder,7.5,2.2
+Hughes Will,Watford,midfielder,6.2,5.5
+Kiko,Watford,midfielder,5.8,0
+Ndong Didier,Watford,midfielder,6.1,0
+Pereyra Roberto,Watford,midfielder,7.9,2.2
+Carrillo Andre,Watford,forwarder,7.5,1.1
+Deeney Troy,Watford,forwarder,8.5,8.8
+Gray Andre,Watford,forwarder,8.5,0
+Okaka Stefano,Watford,forwarder,7.2,1.1
+Richarlison,Watford,forwarder,8.3,1.1
+Sinclair Jerome,Watford,forwarder,6.6,0
+Foster Ben,West Brom,goal_keeper,6,1.8
+Myhill Glyn Oliver,West Brom,goal_keeper,5.4,0
+Palmer Alex,West Brom,goal_keeper,5.4,0
+Dawson Craig,West Brom,defender,6.5,1.8
+Evans Jonny,West Brom,defender,6.6,1.8
+Gabr Ali,West Brom,defender,6.1,0
+Gibbs Kieran,West Brom,defender,6.8,1.8
+Hegazy Ahmed,West Brom,defender,6.4,1.8
+Jameson Kyle,West Brom,defender,5.4,0
+McAuley Gareth,West Brom,defender,6.1,0
+Nyom Allan,West Brom,defender,6.5,0
+Barry Gareth,West Brom,midfielder,6.1,0
+Brunt Chris,West Brom,midfielder,6.8,1.8
+Burke Oliver,West Brom,midfielder,6.6,0.9
+Chadli Nacer,West Brom,midfielder,7.6,0
+Ferguson Nathan,West Brom,midfielder,5.4,0
+Field Sam,West Brom,midfielder,6.1,0.9
+Harper Rekeem,West Brom,midfielder,6.1,0
+Krychowiak Grzegorz,West Brom,midfielder,6.5,0.9
+Livermore Jake,West Brom,midfielder,6.5,0.9
+McClean James,West Brom,midfielder,6.4,0.9
+Morrison James,West Brom,midfielder,7.3,0
+Phillips Matt,West Brom,midfielder,7.3,1.8
+Robson-Kanu Hal,West Brom,midfielder,6.6,0
+Tulloch Rayhaan Rahim Amari,West Brom,midfielder,6.1,0
+Yacob Claudio,West Brom,midfielder,5.8,0
+Leko Jonathan,West Brom,forwarder,6.1,0
+Rodriguez Jay,West Brom,forwarder,7.5,0.9
+Rondón Jose,West Brom,forwarder,8.1,1.8
+Sturridge Daniel,West Brom,forwarder,10.7,0
+Adrián,West Ham,goal_keeper,6,1.8
+Hart Joe,West Ham,goal_keeper,5.8,0
+Trott Nathan,West Ham,goal_keeper,5.4,0
+Collins James,West Ham,defender,5.8,0
+Cresswell Aaron,West Ham,defender,6.9,5.4
+Evra Patrice,West Ham,defender,6.1,0.9
+Masuaku Arthur,West Ham,defender,5.8,0
+Neufville Vashon,West Ham,defender,4.5,0
+Ogbonna Angelo,West Ham,defender,6,0
+Reid Winston,West Ham,defender,6.5,0.9
+Zabaleta Pablo,West Ham,defender,6.6,1.8
+Antonio Michail,West Ham,midfielder,10,7.2
+Browne Marcus,West Ham,midfielder,0,0
+Byram Samuel,West Ham,midfielder,5.7,0.9
+Cullen Josh,West Ham,midfielder,6.1,0
+Diangana Grady,West Ham,midfielder,4.5,0
+Fernandes Edimilson,West Ham,midfielder,6,0
+Haksabanovic Sead,West Ham,midfielder,6.8,0
+Kouyaté Cheikhou,West Ham,midfielder,6.8,0.9
+Lanzini Manuel,West Ham,midfielder,9,1.8
+Mario Joao,West Ham,midfielder,8.7,0
+Noble Mark,West Ham,midfielder,7.2,0.9
+Obiang Pedro,West Ham,midfielder,5.8,0
+Quina Domingos,West Ham,midfielder,6,0
+Rice Declan,West Ham,midfielder,6,1.8
+Afolayan Oladapo,West Ham,forwarder,4.5,0
+Arnautovic Marko,West Ham,forwarder,9.4,0.9
+Carroll Andrew,West Ham,forwarder,5.8,0
+Chicharito,West Ham,forwarder,9.1,1.8
+Holland Nathan,West Ham,forwarder,4.5,0
+Hugill Jordan,West Ham,forwarder,7.3,0
+Johnson Benjamin,West Ham,forwarder,6.1,0

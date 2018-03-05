@@ -66,6 +66,14 @@ func MatchNames(name1, name2 string) bool {
 	mini1, _ := GetMiniName(name1)
 	mini2, _ := GetMiniName(name2)
 
+	if name1 == name2 {
+		return true
+	}
+
+	if strings.EqualFold(name1, name2) {
+		return true
+	}
+
 	if name1 == mini2 || name2 == mini1 {
 		return true
 	}
