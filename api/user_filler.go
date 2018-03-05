@@ -7,7 +7,11 @@ import (
 )
 
 func init() {
+	FillUsers()
 
+}
+
+func FillUsers() {
 	users, err := helpers.GetAllUsers()
 	if err != nil {
 		panic(err)
@@ -32,5 +36,4 @@ func init() {
 			pp.Println(upUser.PlayingTeams[0].Points)
 		}
 	}
-
 }
